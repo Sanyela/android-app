@@ -1,0 +1,155 @@
+# 本配置文件仅适用于 [萌通加速]1.2.0 以上版本，如有不懂请联系开发者 tg:@wallyperry
+# 注意：修改内容请严格遵守 yaml 格式，特别是缩进和空格，否则 app 可能会报错
+
+# app与v2b面板的通信地址，一般是面板前端域名
+apiUrl: "https://lx8.lanxingyun.cn/"
+
+# Crisp在线客服，不填写则入口隐藏
+crispId: "91c15c03-5f48-402b-85f0-ba81a1f8aa41"
+
+# 用户协议及隐私政策
+agreements:
+  # 是否显示（总开关：[第一次进入app、登录、注册、其他设置-关于]的显示）
+  show: true
+  # 第一次进入 app 的弹窗标题
+  title: "个人信息保护提示"
+  # 第一次进入 app 的弹窗内容，支持文字a标签跳转
+  content: "感谢您使用流星8加速！我们将依据<a href='https://moetor.one/user-agreement.html'>《用户服务协议》</a>和<a href='https://moetor.one/privacy-policy.html'>《隐私政策》</a>来帮助您了解我们在收集、使用、存储和共享您个人信息的情况以及您享有的相关权利。<br><br>1、您可以通过查看《用户服务协议》和《隐私政策》来了解我们可能收集、使用的您的个人信息情况；<br><br>2、基于您的明示授权，我们可能调用您的重要设备权限。我们将在首次调用时逐项询问您是否允许使用该权限，您有权拒绝或取消授权；<br><br>3、我们会采取业界先进的安全措施保护您的信息安全；<br><br>4、您可以查询、更正、删除、撤回授权您的个人信息，我们也提供账户注销的渠道。<br><br>"
+  # 服务协议url
+  service_link: "https://moetor.one/user-agreement.html"
+  # 隐私政策url
+  privacy_link: "https://moetor.one/privacy-policy.html"
+
+# 每次进入app时的弹窗，支持多弹窗队列弹出
+notice_list:
+  - show: true  # 开关
+    title: "邀请总返利50%"
+    content: "每邀请一名朋友并成为我们的会员，您将获得邀请佣金奖励(佣金比例一级35%，二级10%，三级5%)，若朋友在流星8加速消费100元，您则可获得返利35元。此返利可用于购买套餐或提现！【快来和我们一起赚钱吧！】"
+    negative: ""  # 左边按钮文字，不填则隐藏
+    position: ""  # 右边按钮文字，不填则隐藏
+    position_link: ""  # 右边按钮跳转地址，不填则不进行跳转
+
+    # 示例
+  - show: false
+    title: "这是第二个弹窗"
+    content: "这里是弹窗内容"
+    negative: ""
+    position: ""
+    position_link: ""
+
+# 购买套餐下单时的弹窗
+buyTip:
+  show: false
+  title: "购买须知"
+  content: "无退款服务，是否确认购买？"
+
+# 商店页面的配置
+shop:
+  title: "购买订阅"
+  desc: "选择最适合您的计划"
+  list:
+    - id: 8  # 对应v2b的套餐id字段
+      name: "标准版"  # 套餐名称
+      price: "¥39.9"  # 套餐价格，这里需要把货币单位加上
+      type: "month_price"  # 付款周期类型：[月付：month_price，季付：quarter_price，半年付：half_year_price，年付：year_price，两年付：two_year_price，三年付：three_year_price，一次性：onetime_price]
+      recommend: false  # 是否在右上角显示推荐图标
+      desc:  # 套餐详情，以下列表数量不限可以无限添加，但请注意格式
+        # title:小标题，content：内容，support：✔︎ or ✖︎
+        - { title: "流量明细",content: "每月 <font color='#E04F1A'>300GB</font> 流量",support: true }
+        - { title: "重置期限",content: "每月购买日自动重置流量",support: true }
+        - { title: "线路优势",content: "Chatgpt专用稳定节点",support: true }
+        - { title: "流媒体支持",content: "Netflix/Hulu/Hbo/Disney+等流媒体",support: true }
+        - { title: "套餐优势",content: "全球 <font color='#E04F1A'>10+</font> 国家/地区， <font color='#E04F1A'>40+</font> 节点",support: true }
+        - { title: "设备支持",content: "SS-Obfs协议，支持 <font color='#E04F1A'>10</font> 台设备同时使用",support: true }
+        - { title: "其他说明",content: "<font color='#E04F1A'>无退款服务</font>，介意勿买",support: true }
+    - id: 9
+      name: "高级版"
+      price: "¥59.9"
+      type: "month_price"
+      recommend: true
+      desc:
+        - { title: "流量明细",content: "每月 <font color='#E04F1A'>700GB</font> 流量",support: true }
+        - { title: "重置期限",content: "每月购买日自动重置流量",support: true }
+        - { title: "线路优势",content: "Chatgpt专用稳定节点",support: true }
+        - { title: "流媒体支持",content: "Netflix/Hulu/Hbo/Disney+等流媒体",support: true }
+        - { title: "套餐优势",content: "全球 <font color='#E04F1A'>10+</font> 国家/地区， <font color='#E04F1A'>50+</font> 节点",support: true }
+        - { title: "设备支持",content: "SS-Obfs协议，支持 <font color='#E04F1A'>10</font> 台设备同时使用",support: true }
+        - { title: "其他说明",content: "<font color='#E04F1A'>无退款服务</font>，介意勿买",support: true }
+    - id: 11
+      name: "不限时版"
+      price: "¥299.00"
+      type: "onetime_price"
+      recommend: false
+      desc:
+        - { title: "流量明细",content: "永久 <font color='#E04F1A'>3000GB</font> 流量",support: true }
+        - { title: "重置期限",content: "套餐永不过期，流量用完即套餐失效",support: true }
+        - { title: "线路优势",content: "Chatgpt专用稳定节点",support: true }
+        - { title: "流媒体支持",content: "Netflix/Hulu/Hbo/Disney+等流媒体",support: true }
+        - { title: "套餐优势",content: "全球 <font color='#E04F1A'>10+</font> 国家/地区， <font color='#E04F1A'>50+</font> 节点",support: true }
+        - { title: "设备支持",content: "SS-Obfs协议，支持 <font color='#E04F1A'>10</font> 台设备同时使用",support: true }
+        - { title: "其他说明",content: "<font color='#E04F1A'>无退款服务</font>，介意勿买",support: true }
+
+# 首页网站推荐
+homeNav:
+  show: true  # 是否显示
+  title: "网站推荐"  # 标题
+  list: #以下列表数量不限可以无限添加，但请注意格式
+    - text: "蓝星云官网"
+      icon: "https://pic.imgdb.cn/item/65046ec5661c6c8e54c02b1a.png"
+      link: "https://lx8.xn--czrt80bko3akoc.com/"
+    - text: "最新客户端"
+      icon: "https://pic.imgdb.cn/item/65046ec5661c6c8e54c02b1a.png"
+      link: "https://lxjs.lanzout.com/s/lxapp"
+      need_connected: false # 是否在连接状态下才能跳转
+    - text: "星星小店"
+      icon: "https://pic.imgdb.cn/item/65153c54c458853aefb3357a.png"
+      link: "https://xxfk.store"
+      need_connected: false
+    - text: "ChatGPT"
+      icon: "https://cdnjson.com/images/2023/07/11/ChatGPT_logo.svg.png"
+      link: "https://chat.openai.com/"
+      need_connected: false
+    - text: "Google"
+      icon: "https://i3.mjj.rip/2023/07/10/46daf515c691dffc8be5389efa01b215.webp"
+      link: "https://www.google.com"
+      need_connected: false
+    - text: "Telegram"
+      icon: "https://simg.doyo.cn/imgfile/bgame/202303/08094239yadd.jpg"
+      link: "https://t.me/+zgTUt4jCjTdiODZh"
+      need_connected: false
+    - text: "tikotk"
+      icon: "https://verhalenvangidohome.files.wordpress.com/2020/10/tiktok-logo-1.png?w=1082"
+      link: "https://www.tiktok.com"
+      need_connected: false
+    - text: "Facebook"
+      icon: "https://simg.doyo.cn/imgfile/bgame/202303/07161609vgut.jpg"
+      link: "https://www.facebook.com"
+      need_connected: false
+    - text: "Twitter"
+      icon: "https://simg.doyo.cn/imgfile/bgame/202306/251147191iac.png"
+      link: "https://www.twitter.com"
+      need_connected: false
+    - text: "Instagram"
+      icon: "https://simg.doyo.cn/imgfile/bgame/202303/07154226kh8v.jpg"
+      link: "https://www.instagram.com"
+      need_connected: false
+    - text: "Spotify"
+      icon: "https://i3.mjj.rip/2023/07/10/c0e2fa09778c0a0864966f4ad16f5f7d.webp"
+      link: "https://www.spotify.com"
+      need_connected: false
+    - text: "YouTube"
+      icon: "https://simg.doyo.cn/imgfile/bgame/202303/04165047scdv.jpg"
+      link: "https://www.youtube.com"
+      need_connected: false
+    - text: "Netflix"
+      icon: "https://cdnjson.com/images/2023/07/11/e07a41e8afc91b3ff66ddd02e6b8378e786034721acfa948e43de85449c7971b_200.png"
+      link: "https://lxjs.lanzout.com/iSBMo180hzxa"
+      need_connected: false
+    - text: "Disney+"
+      icon: "https://cdnjson.com/images/2023/07/11/eb7202d9c9bfbc97c6f1e644dce1f58f9fbcf193ae9edff9bdda2c088cdbabf0_200.png"
+      link: "https://www.disneyplus.com"
+      need_connected: false
+    - text: "老司机"
+      icon: "https://img.lx8.fun/file/3cf3b613ebb353757431c.png"
+      link: "https://hlw013.life/?a=k283jq"
+      need_connected: false
