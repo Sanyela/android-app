@@ -2,7 +2,7 @@
 # 注意：修改内容请严格遵守 yaml 格式，特别是缩进和空格，否则 app 可能会报错
 
 # app与v2b面板的通信地址，一般是面板前端域名
-apiUrl: "https://lx8.lanxingyun.cn/"
+apiUrl: "https://xn--4kqz9d5zhdssxse.xyz/"
 
 # Crisp在线客服，不填写则入口隐藏
 crispId: "91c15c03-5f48-402b-85f0-ba81a1f8aa41"
